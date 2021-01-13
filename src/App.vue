@@ -1,33 +1,16 @@
 <template>
   <div id="app">
-    <Greeting />
-    <Navbar />
-    <Secondary />
-    <LittleTest />
-    <Accardion />
-    <Communication />
-    <Footer />
+    <router-view />
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-import Navbar from "./components/HeaderComponent";
-import Greeting from "./components/GreetingComponent";
-import Secondary from "./components/SecondaryComponent";
-import LittleTest from "./components/LittleTest";
-import Accardion from "./components/AcardionFAQComponent";
-import Communication from "./components/CommunicationComponent";
-import Footer from "./components/FooterComponent";
+import FooterComponent from "@/components/FooterComponent";
+
 export default {
-  name: "App",
   components: {
-    Navbar,
-    Greeting,
-    Secondary,
-    LittleTest,
-    Accardion,
-    Communication,
-    Footer
+    FooterComponent,
   },
 };
 </script>

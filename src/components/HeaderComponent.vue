@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky-top mb-5">
+  <header class="sticky-top">
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <b-container>
         <b-navbar-brand href="#"
@@ -17,10 +17,3 @@
     </b-navbar>
   </header>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style>
-</style>
