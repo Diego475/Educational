@@ -1,59 +1,57 @@
 <template>
-  <div>
+<div>
     <HomeWrap />
     <NavHeader />
     <OurAdvantages />
     <ForWhom />
     <QuestionsComponent />
     <FeedbackComponent />
-  </div>
+</div>
 </template>
 
 <script>
-// Connected components
-import HomeWrap from "@/components/HomeWrap";
+import HomeWrap from "@/components/HomeView/HomeWrap";
 import NavHeader from "@/components/HeaderComponent";
-import OurAdvantages from "@/components/OurAdvantages";
-import ForWhom from "../components/ForWhom";
-import QuestionsComponent from "@/components/QuestionsComponent";
-import FeedbackComponent from "@/components/FeedbackComponent";
+import OurAdvantages from "@/components/HomeView/OurAdvantages";
+import ForWhom from "@/components/HomeView/ForWhom";
+import QuestionsComponent from "@/components/HomeView/QuestionsComponent";
+import FeedbackComponent from "@/components/HomeView/FeedbackComponent";
 
 export default {
-  //Use components
-  components: {
-    HomeWrap,
-    NavHeader,
-    OurAdvantages,
-    ForWhom,
-    QuestionsComponent,
-    FeedbackComponent,
-  },
+    components: {
+        HomeWrap,
+        NavHeader,
+        OurAdvantages,
+        ForWhom,
+        QuestionsComponent,
+        FeedbackComponent,
+    },
 };
 </script>
 
 <style>
 .paralax {
-  width: 100%;
-  min-height: 100vh;
-  background: url("../../public/img/wrap.jpeg") 0 0 / cover no-repeat fixed;
+    width: 100%;
+    min-height: 100vh;
+    background: url("../../public/img/wrap.jpeg") 0 0 / cover no-repeat fixed;
 }
 
 .paralax__bg__color {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: #343a40ed;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #343a40ed;
 }
 
 .fa-globe {
-  color: #00b7ff;
+    color: #00b7ff;
 }
 
 .fa-heart {
-  color: red;
+    color: red;
 }
 
 .fa-mouse-pointer {
-  color: var(--gray-dark);
+    color: var(--gray-dark);
 }
 </style>

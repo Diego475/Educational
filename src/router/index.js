@@ -1,13 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home'
+import SingUp from '../views/SingUp'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '',
     component: Home,
+  },
+  {
+    path: '/singUp',
+    component: SingUp,
   }
 ]
 

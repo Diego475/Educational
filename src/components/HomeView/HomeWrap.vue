@@ -15,7 +15,7 @@
                     проект для тестирования разработан для учебных заведений</b-col>
             </b-row>
             <b-col>
-                <b-button pill variant="outline-light">Присоединиться</b-button>
+                <b-button href="singup" pill variant="outline-light">Присоединиться</b-button>
             </b-col>
         </b-container>
     </div>
