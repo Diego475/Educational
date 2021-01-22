@@ -1,20 +1,13 @@
 <template>
   <div>
     <NavHeader />
-    <b-container>
-      <b-row class="my-4">
-        <b-col class="text-center">
-          <h1>Регистрация</h1>
-        </b-col>
-      </b-row>
-      <BlogReg />
-    </b-container>
+    <BlogReg></BlogReg>
   </div>
 </template>
 
 <script>
 import NavHeader from "@/components/HeaderComponent";
-import BlogReg from "@/components/SingUpView/RegisterComponent";
+import BlogReg from "@/components/SingUpView/CompletComponentUser";
 
 export default {
   components: {
@@ -23,6 +16,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

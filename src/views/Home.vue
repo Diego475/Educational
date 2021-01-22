@@ -6,6 +6,7 @@
     <ForWhom />
     <QuestionsComponent />
     <FeedbackComponent />
+    <FooterComponent/>
 </div>
 </template>
 
@@ -16,6 +17,7 @@ import OurAdvantages from "@/components/HomeView/OurAdvantages";
 import ForWhom from "@/components/HomeView/ForWhom";
 import QuestionsComponent from "@/components/HomeView/QuestionsComponent";
 import FeedbackComponent from "@/components/HomeView/FeedbackComponent";
+import FooterComponent from "@/components/FooterComponent";
 
 export default {
     components: {
@@ -25,6 +27,7 @@ export default {
         ForWhom,
         QuestionsComponent,
         FeedbackComponent,
+        FooterComponent
     },
 };
 </script>

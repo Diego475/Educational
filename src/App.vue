@@ -1,22 +1,11 @@
 <template>
-  <div id="app">
+<div id="app">
     <router-view />
-    <FooterComponent />
-  </div>
+</div>
 </template>
-
-<script>
-import FooterComponent from "@/components/FooterComponent";
-
-export default {
-  components: {
-    FooterComponent,
-  },
-};
-</script>
-
 <style>
-footer {
-  background-color: #2d2d2d;
+html,
+body {
+    height: 100%;
 }
 </style>
