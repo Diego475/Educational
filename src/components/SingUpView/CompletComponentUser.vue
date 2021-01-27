@@ -4,13 +4,13 @@
     <slot-reg v-if="show == true">
       <span slot="title">Закончить регистрацию</span>
       <b-card slot="body">
-        <b-form-group class="mb-4" label-cols="2" label="Фамилия">
+        <b-form-group class="mb-4" label-cols="12" label-cols-sm="2" label="Фамилия">
           <b-form-input
             type="text"
             placeholder="Введите Вашу фамилию"
           ></b-form-input>
         </b-form-group>
-        <b-form-group class="mb-4" label-cols="2" label="Отчество">
+        <b-form-group class="mb-4" label-cols="12" label-cols-sm="2" label="Отчество">
           <b-form-input
             type="text"
             placeholder="Введите Ваше отчество"

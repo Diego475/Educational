@@ -7,7 +7,7 @@
 
 <script>
 import NavHeader from "@/components/HeaderComponent";
-import BlogReg from "@/components/SingUpView/CompletComponentUser";
+import BlogReg from "@/components/SingUpView/RegisterComponent";
 
 export default {
   components: {

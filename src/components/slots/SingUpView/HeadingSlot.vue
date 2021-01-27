@@ -5,8 +5,8 @@
         <h1><slot name="title"></slot></h1>
       </b-col>
     </b-row>
-    <b-row class="justify-content-center align-self-center mb-3">
-      <b-col cols="6" class="mb-3 my-auto">
+    <b-row class="justify-content-center mb-5">
+      <b-col cols="12" md="9" lg="8" xl="6">
         <slot name="body"></slot>
       </b-col>
     </b-row>
