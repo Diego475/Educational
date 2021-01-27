@@ -24,8 +24,7 @@
 ## Основные правила при работе с проектом:
 1. Все компоненты должны заканчиваться на <b>Component</b>. Например <b>HeaderComponent.vue</b>
 2. В каталоге <code>src/components</code> содержаться другие директории, а в них, те самые компоненты <b>представления</b>. Поэтому при создании нового представления используйте следующую структуру:<br>
-<code>root@admin:~# cd 
-Educational/src/components</code> <br>
+<code>root@admin:/ cd Educational/src/components</code> <br>
 <code>root@admin:~/Educational/src/components# mkdir NameView</code><br>
 Это касается не только компонентов, но и слотов, которые расположены в <code>/src/components/slots/</code>
 <br>
