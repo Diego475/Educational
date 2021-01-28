@@ -246,7 +246,7 @@ export default {
       if (this.$v.$anyError) {
         return;
       }
-      // Продолжить работу
+      // Продолжить
     },
   },
 };
