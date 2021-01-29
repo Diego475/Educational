@@ -2,11 +2,11 @@ const nodemailer = require("nodemailer");
 
 // Конфигурация почты
 const mailUser = {
-    login: "sdsdesdfsf5451@gmail.com",
-    password: "JM8PGuRF"
-}
+    login: "exemple@gmail.com",
+    password: "password"
+};
 
-
+// Конфигурация Node Mailer
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -15,4 +15,4 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-module.exports = {transporter, mailUser};
+module.exports = { transporter, mailUser };
