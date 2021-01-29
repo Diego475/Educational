@@ -1,5 +1,6 @@
-const UserModel = require("../models/User");
+const { validationResult } = require('express-validator');
 const { transporter, mailUser } = require('../config/mail');
+const UserModel = require("../models/User");
 const EmailModel = require("../models/Email");
 
 exports.singUp = async (req, res) => {
@@ -10,6 +11,15 @@ exports.singUp = async (req, res) => {
     // Проводим проверку наличие полученных данных
     if (Object.keys(req.body).length !== 0) {
 
+        // Объект с результатами валидации
+        const errors = validationResult(req);
+
+        // Проверяем объект на пустоту
+        if (!errors.isEmpty()) {
+
+            // Если он оказался не пустым, возращеем статус "Плохой запрос"
+            return res.sendStatus(400);
+        }
         // Константа с символами для генерации уникального кода
         const codeChar = "a8bcde6fghij4klm2no53pq1r7stuvw9xyz";
 
