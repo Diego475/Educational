@@ -1,4 +1,4 @@
-const transporter = require('../config/mail')
+const {transporter, mailUser} = require('../config/mail')
 const { validationResult } = require("express-validator")
 
 exports.sendMessage = (req, res) => {
@@ -14,7 +14,7 @@ exports.sendMessage = (req, res) => {
 
     const mailData = transporter.sendMail({
         from: req.body.email,
-        to: "myname@example.com",
+        to: mailUser.login,
         subject: "Сообщение с сайта EduDigital.",
         html: `${req.body.text}
         <table border="1">

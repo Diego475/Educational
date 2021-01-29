@@ -16,6 +16,19 @@ const userShema = new Schema({
         type: String,
         required: false
     },
+    surname: {
+        type: String,
+        required: false
+    },
+    patronymic: {
+        type: String,
+        required: false
+    },
+    active: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
     institut: {
         type: String,
         required: false

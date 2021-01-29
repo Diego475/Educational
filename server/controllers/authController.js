@@ -1,4 +1,9 @@
-const UserModel = require("../models/User")
+const UserModel = require("../models/User") // Модель пользователя
+const { transporter, mailUser } = require('../config/mail') // Конфигурация почты
+const EmailModel = require("../models/Email") // Модель электронной почты
+
+
+
 
 exports.singUp = async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -45,27 +50,87 @@ exports.singUp = async (req, res) => {
                 login: req.body.login,
                 name: req.body.name,
                 password: req.body.password,
-                category: req.body.category,
+                category: req.body.category
             }
-
-
-            UserModel.create(User, (err, res) => {
-                if(err) return console.log(err);
-
-                console.log("Сохранен объект user", res);
-            })
-
-
-        }
-
             /*
             *
             *
-            * Иначе, если категория пользователя учебное учреждение...
-            *   
+            * Создаём пользователя и отслеживаем ошибки
+            * 
             * 
             */
+            UserModel.create(User, (err) => {
+                /*
+                *
+                *
+                * В случае нахождения ошибки возращем статус "Плохой запрос"
+                * 
+                * 
+                */
+                if (err) {
+                    return res.sendStatus(400)
+                }
+                /*
+                *
+                *
+                * Если ошибок не было то, создаётся объект
+                * 
+                * 
+                */
 
+
+                const mailData = {
+                    from: User.email, // куда: отправка на почту пользователю, который отправил данные
+                    to: mailUser.login, // полная информация сдесь: server/config/mail.js
+                    subject: "Код подтверждения",
+                    text: code // сам код подтверждения
+                }
+
+
+                /*
+                *
+                *
+                * Сохраняем сообщение в базе данных
+                * 
+                * 
+                */
+                EmailModel.create(mailData, (err) => {
+                    /*
+                    *
+                    *
+                    * Проверка на наличие ошибок
+                    * 
+                    * 
+                    */
+                    if (err) {
+                        return res.sendStatus(400)
+                    }
+                    /*
+                    *
+                    *
+                    * Если ошибок не обнаруженно, отправляем письмо
+                    * 
+                    * 
+                    */
+                    const Data = transporter.sendMail(mailData);
+                    /*
+                    *
+                    *
+                    * Отдаём клиенту "Создано"
+                    * 
+                    * 
+                    */
+                    return res.sendStatus(201)
+                })
+            })
+        }
+        /*
+        *
+        *
+        * Иначе, если категория пользователя учебное учреждение...
+        *   
+        * 
+        */
         else if (req.body.category == "Школа/ССУЗ/ВУЗ") {
             /*
             *
@@ -78,8 +143,6 @@ exports.singUp = async (req, res) => {
             for (let i = 0; i < 25; i++) {
                 key += keyChar.charAt(Math.floor(Math.random() * keyChar.length));
             }
-
-
             /*
             *
             *   Создаём объект пользователя  
@@ -93,18 +156,12 @@ exports.singUp = async (req, res) => {
                 category: req.body.category,
                 key: key
             }
-            
         }
-
         else {
             return res.sendStatus(400)
         }
     }
-
     else {
         return res.sendStatus(204)
     }
-
-
-
 }
