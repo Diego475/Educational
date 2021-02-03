@@ -1,5 +1,7 @@
-const {transporter, mailUser} = require('../config/mail')
-const { validationResult } = require("express-validator")
+const validationResult = require("express-validator");
+
+const transporter = require('../config/mail');
+const keys = require('../config/keys');
 
 exports.sendMessage = (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -14,7 +16,7 @@ exports.sendMessage = (req, res) => {
 
     const mailData = transporter.sendMail({
         from: req.body.email,
-        to: mailUser.login,
+        to: keys.mailUser.login,
         subject: "Сообщение с сайта EduDigital.",
         html: `${req.body.text}
         <table border="1">

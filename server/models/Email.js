@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const email = require('../config/mail')
+const keys = require("../config/keys");
 
 
 const Schema = mongoose.Schema;
@@ -8,7 +8,7 @@ const emailShema = new Schema({
     from: {
         type: String,
         required: true,
-        default: email.mailUser.login
+        default: keys.mailUser.login
     },
     to: {
         type: String,
